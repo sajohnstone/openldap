@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  ldap:
+    image: platform-components/ldap-server:latest
+    ports:
+      - "80:80"
+      - "389:389"
