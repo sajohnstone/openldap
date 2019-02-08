@@ -32,16 +32,10 @@ RUN echo "[supervisord]" > /etc/supervisord.conf && \
     echo "[program:docker-entrypoint]" >> /etc/supervisord.conf && \
     echo "command=/root/slapd/docker-entrypoint.sh" >> /etc/supervisord.conf && \
     echo "" >> /etc/supervisord.conf
-    # echo "[program:slapd]" >> /etc/supervisord.conf && \
-    # echo "command=/etc/init.d/slapd start" >> /etc/supervisord.conf
 
 # Expose section
 EXPOSE 80
 EXPOSE 389
 
 # Load container
-#CMD ["/opt/bin/start-apache.sh"]
-#ENTRYPOINT ["apache2", "-D", "FOREGROUND"]
-#CMD apachectl -D FOREGROUND
-
 CMD ["/usr/bin/supervisord"]
