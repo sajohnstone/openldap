@@ -20,6 +20,7 @@ RUN apache2ctl configtest
 # Configure slapd (NB at some point we should move the bash script into Docker)
 RUN mkdir -p /root/slapd/
 ADD docker-entrypoint.sh /root/slapd/
+ADD config.php /etc/phpldapadmin/
 RUN chmod +x /root/slapd/docker-entrypoint.sh
 
 # Configure supervisor (enables you to start two processes)
